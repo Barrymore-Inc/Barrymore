@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="832e82a4-2a16-4760-81ef-8fff70666e31" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/uquark/barrymore/utils/LongestCommonSubstring.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/LCSTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/uquark.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/uquark/barrymore/lexer/Alias.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/uquark/barrymore/lexer/Lexer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/LexerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/TestDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DatabaseTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +75,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
-  <component name="RunManager" selected="JUnit.DatabaseTest">
+  <component name="RunManager" selected="JUnit.LexerTest.testTokenization">
     <configuration name="DBOOP" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="me.uquark.barrymore.tools.DBOOP" />
       <module name="Barrymore" />
@@ -119,8 +118,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="LexerTest.testTokenization" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Barrymore" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="LexerTest" />
+      <option name="METHOD_NAME" value="testTokenization" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LexerTest.testTokenization" />
         <item itemvalue="JUnit.DatabaseTest" />
         <item itemvalue="JUnit.DatabaseTest.testQuery" />
         <item itemvalue="JUnit.DatabaseTest.testConnection" />
@@ -154,7 +164,7 @@
       <workItem from="1584911067022" duration="3988000" />
       <workItem from="1585315758748" duration="77000" />
       <workItem from="1585579325681" duration="4837000" />
-      <workItem from="1585585192149" duration="467000" />
+      <workItem from="1585585192149" duration="2109000" />
     </task>
     <servers />
   </component>
@@ -173,38 +183,38 @@
       <screen x="0" y="36" width="1920" height="1044" />
     </state>
     <state x="743" y="315" key="FileChooserDialogImpl/0.36.1920.1044@0.36.1920.1044" timestamp="1585584695475" />
-    <state width="1874" height="275" key="GridCell.Tab.0.bottom" timestamp="1585585660041">
+    <state width="1874" height="275" key="GridCell.Tab.0.bottom" timestamp="1585587342402">
       <screen x="0" y="36" width="1920" height="1044" />
     </state>
-    <state width="1874" height="275" key="GridCell.Tab.0.bottom/0.36.1920.1044@0.36.1920.1044" timestamp="1585585660041" />
-    <state width="1874" height="275" key="GridCell.Tab.0.center" timestamp="1585585660041">
+    <state width="1874" height="275" key="GridCell.Tab.0.bottom/0.36.1920.1044@0.36.1920.1044" timestamp="1585587342402" />
+    <state width="1874" height="275" key="GridCell.Tab.0.center" timestamp="1585587342401">
       <screen x="0" y="36" width="1920" height="1044" />
     </state>
-    <state width="1874" height="275" key="GridCell.Tab.0.center/0.36.1920.1044@0.36.1920.1044" timestamp="1585585660041" />
-    <state width="1874" height="275" key="GridCell.Tab.0.left" timestamp="1585585660040">
+    <state width="1874" height="275" key="GridCell.Tab.0.center/0.36.1920.1044@0.36.1920.1044" timestamp="1585587342401" />
+    <state width="1874" height="275" key="GridCell.Tab.0.left" timestamp="1585587342401">
       <screen x="0" y="36" width="1920" height="1044" />
     </state>
-    <state width="1874" height="275" key="GridCell.Tab.0.left/0.36.1920.1044@0.36.1920.1044" timestamp="1585585660040" />
-    <state width="1874" height="275" key="GridCell.Tab.0.right" timestamp="1585585660041">
+    <state width="1874" height="275" key="GridCell.Tab.0.left/0.36.1920.1044@0.36.1920.1044" timestamp="1585587342401" />
+    <state width="1874" height="275" key="GridCell.Tab.0.right" timestamp="1585587342402">
       <screen x="0" y="36" width="1920" height="1044" />
     </state>
-    <state width="1874" height="275" key="GridCell.Tab.0.right/0.36.1920.1044@0.36.1920.1044" timestamp="1585585660041" />
-    <state width="1874" height="340" key="GridCell.Tab.1.bottom" timestamp="1585584839660">
+    <state width="1874" height="275" key="GridCell.Tab.0.right/0.36.1920.1044@0.36.1920.1044" timestamp="1585587342402" />
+    <state width="1874" height="340" key="GridCell.Tab.1.bottom" timestamp="1585587173774">
       <screen x="0" y="36" width="1920" height="1044" />
     </state>
-    <state width="1874" height="340" key="GridCell.Tab.1.bottom/0.36.1920.1044@0.36.1920.1044" timestamp="1585584839660" />
-    <state width="1874" height="340" key="GridCell.Tab.1.center" timestamp="1585584839659">
+    <state width="1874" height="340" key="GridCell.Tab.1.bottom/0.36.1920.1044@0.36.1920.1044" timestamp="1585587173774" />
+    <state width="1874" height="340" key="GridCell.Tab.1.center" timestamp="1585587173773">
       <screen x="0" y="36" width="1920" height="1044" />
     </state>
-    <state width="1874" height="340" key="GridCell.Tab.1.center/0.36.1920.1044@0.36.1920.1044" timestamp="1585584839659" />
-    <state width="1874" height="340" key="GridCell.Tab.1.left" timestamp="1585584839658">
+    <state width="1874" height="340" key="GridCell.Tab.1.center/0.36.1920.1044@0.36.1920.1044" timestamp="1585587173773" />
+    <state width="1874" height="340" key="GridCell.Tab.1.left" timestamp="1585587173773">
       <screen x="0" y="36" width="1920" height="1044" />
     </state>
-    <state width="1874" height="340" key="GridCell.Tab.1.left/0.36.1920.1044@0.36.1920.1044" timestamp="1585584839658" />
-    <state width="1874" height="340" key="GridCell.Tab.1.right" timestamp="1585584839659">
+    <state width="1874" height="340" key="GridCell.Tab.1.left/0.36.1920.1044@0.36.1920.1044" timestamp="1585587173773" />
+    <state width="1874" height="340" key="GridCell.Tab.1.right" timestamp="1585587173773">
       <screen x="0" y="36" width="1920" height="1044" />
     </state>
-    <state width="1874" height="340" key="GridCell.Tab.1.right/0.36.1920.1044@0.36.1920.1044" timestamp="1585584839659" />
+    <state width="1874" height="340" key="GridCell.Tab.1.right/0.36.1920.1044@0.36.1920.1044" timestamp="1585587173773" />
     <state width="220" height="477" key="HiddenNamespacesPopup" timestamp="1585584713685">
       <screen x="0" y="36" width="1920" height="1044" />
     </state>
@@ -221,9 +231,9 @@
       <screen x="0" y="36" width="1920" height="1044" />
     </state>
     <state x="619" y="256" key="run.anything.popup/0.36.1920.1044@0.36.1920.1044" timestamp="1584914348624" />
-    <state x="618" y="265" width="672" height="678" key="search.everywhere.popup" timestamp="1584913876845">
+    <state x="618" y="265" width="672" height="678" key="search.everywhere.popup" timestamp="1585586671040">
       <screen x="0" y="36" width="1920" height="1044" />
     </state>
-    <state x="618" y="265" width="672" height="678" key="search.everywhere.popup/0.36.1920.1044@0.36.1920.1044" timestamp="1584913876845" />
+    <state x="618" y="265" width="672" height="678" key="search.everywhere.popup/0.36.1920.1044@0.36.1920.1044" timestamp="1585586671040" />
   </component>
 </project>
