@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="832e82a4-2a16-4760-81ef-8fff70666e31" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/uquark.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/uquark/barrymore/lexer/Alias.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/uquark/barrymore/lexer/Lexer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/LexerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,7 +22,30 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand />
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Barrymore" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Barrymore" type="feb32156:DbDataSourceImpl" />
+        <item name="#1: database" type="23e365eb:GenericImplModel$Database" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Barrymore" type="feb32156:DbDataSourceImpl" />
+        <item name="#1: database" type="23e365eb:GenericImplModel$Database" />
+        <item name="#1: schema" type="255a0c4b:GenericImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Barrymore" type="feb32156:DbDataSourceImpl" />
+        <item name="#1: database" type="23e365eb:GenericImplModel$Database" />
+        <item name="#1: schema" type="255a0c4b:GenericImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+    </expand>
     <select />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -143,7 +164,17 @@
       <list>
         <serviceView>
           <treeState>
-            <expand />
+            <expand>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Barrymore: root" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Barrymore: root" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@4aaaa4b2" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+            </expand>
             <select />
           </treeState>
         </serviceView>
@@ -164,7 +195,9 @@
       <workItem from="1584911067022" duration="3988000" />
       <workItem from="1585315758748" duration="77000" />
       <workItem from="1585579325681" duration="4837000" />
-      <workItem from="1585585192149" duration="2109000" />
+      <workItem from="1585585192149" duration="2495000" />
+      <workItem from="1585587703024" duration="85000" />
+      <workItem from="1585587801307" duration="74000" />
     </task>
     <servers />
   </component>
@@ -175,50 +208,58 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="824" y="89" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585584828539">
+    <state x="560" y="220" key="#SQL_Resolution_Scopes" timestamp="1585587649118">
       <screen x="0" y="36" width="1920" height="1044" />
     </state>
-    <state x="824" y="89" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.36.1920.1044@0.36.1920.1044" timestamp="1585584828539" />
-    <state x="743" y="315" key="FileChooserDialogImpl" timestamp="1585584695475">
+    <state x="560" y="220" key="#SQL_Resolution_Scopes/0.36.1920.1044@0.36.1920.1044" timestamp="1585587649118" />
+    <state x="824" y="89" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585587523365">
       <screen x="0" y="36" width="1920" height="1044" />
     </state>
-    <state x="743" y="315" key="FileChooserDialogImpl/0.36.1920.1044@0.36.1920.1044" timestamp="1585584695475" />
-    <state width="1874" height="275" key="GridCell.Tab.0.bottom" timestamp="1585587342402">
+    <state x="824" y="89" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.36.1920.1044@0.36.1920.1044" timestamp="1585587523365" />
+    <state x="743" y="315" key="FileChooserDialogImpl" timestamp="1585587461975">
       <screen x="0" y="36" width="1920" height="1044" />
     </state>
-    <state width="1874" height="275" key="GridCell.Tab.0.bottom/0.36.1920.1044@0.36.1920.1044" timestamp="1585587342402" />
-    <state width="1874" height="275" key="GridCell.Tab.0.center" timestamp="1585587342401">
+    <state x="743" y="315" key="FileChooserDialogImpl/0.36.1920.1044@0.36.1920.1044" timestamp="1585587461975" />
+    <state width="1291" height="276" key="GridCell.Tab.0.bottom" timestamp="1585587880687">
       <screen x="0" y="36" width="1920" height="1044" />
     </state>
-    <state width="1874" height="275" key="GridCell.Tab.0.center/0.36.1920.1044@0.36.1920.1044" timestamp="1585587342401" />
-    <state width="1874" height="275" key="GridCell.Tab.0.left" timestamp="1585587342401">
+    <state width="1291" height="276" key="GridCell.Tab.0.bottom/0.36.1920.1044@0.36.1920.1044" timestamp="1585587880687" />
+    <state width="1291" height="276" key="GridCell.Tab.0.center" timestamp="1585587880687">
       <screen x="0" y="36" width="1920" height="1044" />
     </state>
-    <state width="1874" height="275" key="GridCell.Tab.0.left/0.36.1920.1044@0.36.1920.1044" timestamp="1585587342401" />
-    <state width="1874" height="275" key="GridCell.Tab.0.right" timestamp="1585587342402">
+    <state width="1291" height="276" key="GridCell.Tab.0.center/0.36.1920.1044@0.36.1920.1044" timestamp="1585587880687" />
+    <state width="1291" height="276" key="GridCell.Tab.0.left" timestamp="1585587880687">
       <screen x="0" y="36" width="1920" height="1044" />
     </state>
-    <state width="1874" height="275" key="GridCell.Tab.0.right/0.36.1920.1044@0.36.1920.1044" timestamp="1585587342402" />
-    <state width="1874" height="340" key="GridCell.Tab.1.bottom" timestamp="1585587173774">
+    <state width="1291" height="276" key="GridCell.Tab.0.left/0.36.1920.1044@0.36.1920.1044" timestamp="1585587880687" />
+    <state width="1291" height="276" key="GridCell.Tab.0.right" timestamp="1585587880687">
       <screen x="0" y="36" width="1920" height="1044" />
     </state>
-    <state width="1874" height="340" key="GridCell.Tab.1.bottom/0.36.1920.1044@0.36.1920.1044" timestamp="1585587173774" />
-    <state width="1874" height="340" key="GridCell.Tab.1.center" timestamp="1585587173773">
+    <state width="1291" height="276" key="GridCell.Tab.0.right/0.36.1920.1044@0.36.1920.1044" timestamp="1585587880687" />
+    <state width="1874" height="340" key="GridCell.Tab.1.bottom" timestamp="1585587687153">
       <screen x="0" y="36" width="1920" height="1044" />
     </state>
-    <state width="1874" height="340" key="GridCell.Tab.1.center/0.36.1920.1044@0.36.1920.1044" timestamp="1585587173773" />
-    <state width="1874" height="340" key="GridCell.Tab.1.left" timestamp="1585587173773">
+    <state width="1874" height="340" key="GridCell.Tab.1.bottom/0.36.1920.1044@0.36.1920.1044" timestamp="1585587687153" />
+    <state width="1874" height="340" key="GridCell.Tab.1.center" timestamp="1585587687153">
       <screen x="0" y="36" width="1920" height="1044" />
     </state>
-    <state width="1874" height="340" key="GridCell.Tab.1.left/0.36.1920.1044@0.36.1920.1044" timestamp="1585587173773" />
-    <state width="1874" height="340" key="GridCell.Tab.1.right" timestamp="1585587173773">
+    <state width="1874" height="340" key="GridCell.Tab.1.center/0.36.1920.1044@0.36.1920.1044" timestamp="1585587687153" />
+    <state width="1874" height="340" key="GridCell.Tab.1.left" timestamp="1585587687153">
       <screen x="0" y="36" width="1920" height="1044" />
     </state>
-    <state width="1874" height="340" key="GridCell.Tab.1.right/0.36.1920.1044@0.36.1920.1044" timestamp="1585587173773" />
+    <state width="1874" height="340" key="GridCell.Tab.1.left/0.36.1920.1044@0.36.1920.1044" timestamp="1585587687153" />
+    <state width="1874" height="340" key="GridCell.Tab.1.right" timestamp="1585587687153">
+      <screen x="0" y="36" width="1920" height="1044" />
+    </state>
+    <state width="1874" height="340" key="GridCell.Tab.1.right/0.36.1920.1044@0.36.1920.1044" timestamp="1585587687153" />
     <state width="220" height="477" key="HiddenNamespacesPopup" timestamp="1585584713685">
       <screen x="0" y="36" width="1920" height="1044" />
     </state>
     <state width="220" height="477" key="HiddenNamespacesPopup/0.36.1920.1044@0.36.1920.1044" timestamp="1585584713685" />
+    <state width="200" height="461" key="SqlResolveConfigurable" timestamp="1585587647857">
+      <screen x="0" y="36" width="1920" height="1044" />
+    </state>
+    <state width="200" height="461" key="SqlResolveConfigurable/0.36.1920.1044@0.36.1920.1044" timestamp="1585587647857" />
     <state x="684" y="292" width="540" height="524" key="StructurePopup" timestamp="1584913365480">
       <screen x="0" y="36" width="1920" height="1044" />
     </state>
