@@ -1,11 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="832e82a4-2a16-4760-81ef-8fff70666e31" name="Default Changelist" comment="" />
+    <list default="true" id="832e82a4-2a16-4760-81ef-8fff70666e31" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Barrymore DB" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Barrymore DB" type="feb32156:DbDataSourceImpl" />
+        <item name="#1: database" type="23e365eb:GenericImplModel$Database" />
+      </path>
+    </expand>
+    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -17,6 +47,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
+  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -25,15 +62,92 @@
     </option>
   </component>
   <component name="ProjectId" id="1ZV44s0SjrYUd7lspIBbTuxdrkJ" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="h2" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Barrymore/jaybird-full-4.0.0.java11.jar" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RunManager" selected="JUnit.TestDB">
+    <configuration name="DBOOP" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="me.uquark.barrymore.tools.DBOOP" />
+      <module name="Barrymore" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="me.uquark.barrymore.tools.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestDB" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Barrymore" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestDB" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestDB.testConnection" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Barrymore" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestDB" />
+      <option name="METHOD_NAME" value="testConnection" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestDB.testQuery" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Barrymore" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestDB" />
+      <option name="METHOD_NAME" value="testQuery" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.TestDB" />
+        <item itemvalue="JUnit.TestDB.testQuery" />
+        <item itemvalue="JUnit.TestDB.testConnection" />
+        <item itemvalue="Application.DBOOP" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -46,32 +160,79 @@
       <option name="presentableId" value="Default" />
       <updated>1584910739098</updated>
       <workItem from="1584910741279" duration="235000" />
+      <workItem from="1584911067022" duration="3988000" />
+      <workItem from="1585315758748" duration="77000" />
+      <workItem from="1585579325681" duration="4837000" />
+      <workItem from="1585585192149" duration="86000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
-    <state width="1864" height="275" key="GridCell.Tab.0.bottom" timestamp="1584910975265">
+    <state x="824" y="89" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585584828539">
       <screen x="0" y="36" width="1920" height="1044" />
     </state>
-    <state width="1864" height="275" key="GridCell.Tab.0.bottom/0.36.1920.1044@0.36.1920.1044" timestamp="1584910975265" />
-    <state width="1864" height="275" key="GridCell.Tab.0.center" timestamp="1584910975265">
+    <state x="824" y="89" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.36.1920.1044@0.36.1920.1044" timestamp="1585584828539" />
+    <state x="743" y="315" key="FileChooserDialogImpl" timestamp="1585584695475">
       <screen x="0" y="36" width="1920" height="1044" />
     </state>
-    <state width="1864" height="275" key="GridCell.Tab.0.center/0.36.1920.1044@0.36.1920.1044" timestamp="1584910975265" />
-    <state width="1864" height="275" key="GridCell.Tab.0.left" timestamp="1584910975264">
+    <state x="743" y="315" key="FileChooserDialogImpl/0.36.1920.1044@0.36.1920.1044" timestamp="1585584695475" />
+    <state width="1874" height="340" key="GridCell.Tab.0.bottom" timestamp="1585584839658">
       <screen x="0" y="36" width="1920" height="1044" />
     </state>
-    <state width="1864" height="275" key="GridCell.Tab.0.left/0.36.1920.1044@0.36.1920.1044" timestamp="1584910975264" />
-    <state width="1864" height="275" key="GridCell.Tab.0.right" timestamp="1584910975265">
+    <state width="1874" height="340" key="GridCell.Tab.0.bottom/0.36.1920.1044@0.36.1920.1044" timestamp="1585584839658" />
+    <state width="1874" height="340" key="GridCell.Tab.0.center" timestamp="1585584839657">
       <screen x="0" y="36" width="1920" height="1044" />
     </state>
-    <state width="1864" height="275" key="GridCell.Tab.0.right/0.36.1920.1044@0.36.1920.1044" timestamp="1584910975265" />
-    <state x="618" y="265" width="672" height="678" key="search.everywhere.popup" timestamp="1584910849649">
+    <state width="1874" height="340" key="GridCell.Tab.0.center/0.36.1920.1044@0.36.1920.1044" timestamp="1585584839657" />
+    <state width="1874" height="340" key="GridCell.Tab.0.left" timestamp="1585584839656">
       <screen x="0" y="36" width="1920" height="1044" />
     </state>
-    <state x="618" y="265" width="672" height="678" key="search.everywhere.popup/0.36.1920.1044@0.36.1920.1044" timestamp="1584910849649" />
+    <state width="1874" height="340" key="GridCell.Tab.0.left/0.36.1920.1044@0.36.1920.1044" timestamp="1585584839656" />
+    <state width="1874" height="340" key="GridCell.Tab.0.right" timestamp="1585584839657">
+      <screen x="0" y="36" width="1920" height="1044" />
+    </state>
+    <state width="1874" height="340" key="GridCell.Tab.0.right/0.36.1920.1044@0.36.1920.1044" timestamp="1585584839657" />
+    <state width="1874" height="340" key="GridCell.Tab.1.bottom" timestamp="1585584839660">
+      <screen x="0" y="36" width="1920" height="1044" />
+    </state>
+    <state width="1874" height="340" key="GridCell.Tab.1.bottom/0.36.1920.1044@0.36.1920.1044" timestamp="1585584839660" />
+    <state width="1874" height="340" key="GridCell.Tab.1.center" timestamp="1585584839659">
+      <screen x="0" y="36" width="1920" height="1044" />
+    </state>
+    <state width="1874" height="340" key="GridCell.Tab.1.center/0.36.1920.1044@0.36.1920.1044" timestamp="1585584839659" />
+    <state width="1874" height="340" key="GridCell.Tab.1.left" timestamp="1585584839658">
+      <screen x="0" y="36" width="1920" height="1044" />
+    </state>
+    <state width="1874" height="340" key="GridCell.Tab.1.left/0.36.1920.1044@0.36.1920.1044" timestamp="1585584839658" />
+    <state width="1874" height="340" key="GridCell.Tab.1.right" timestamp="1585584839659">
+      <screen x="0" y="36" width="1920" height="1044" />
+    </state>
+    <state width="1874" height="340" key="GridCell.Tab.1.right/0.36.1920.1044@0.36.1920.1044" timestamp="1585584839659" />
+    <state width="220" height="477" key="HiddenNamespacesPopup" timestamp="1585584713685">
+      <screen x="0" y="36" width="1920" height="1044" />
+    </state>
+    <state width="220" height="477" key="HiddenNamespacesPopup/0.36.1920.1044@0.36.1920.1044" timestamp="1585584713685" />
+    <state x="684" y="292" width="540" height="524" key="StructurePopup" timestamp="1584913365480">
+      <screen x="0" y="36" width="1920" height="1044" />
+    </state>
+    <state x="684" y="292" width="540" height="524" key="StructurePopup/0.36.1920.1044@0.36.1920.1044" timestamp="1584913365480" />
+    <state x="330" y="262" width="1239" height="590" key="new project wizard" timestamp="1585315833164">
+      <screen x="0" y="36" width="1920" height="1044" />
+    </state>
+    <state x="330" y="262" width="1239" height="590" key="new project wizard/0.36.1920.1044@0.36.1920.1044" timestamp="1585315833164" />
+    <state x="619" y="256" key="run.anything.popup" timestamp="1584914348624">
+      <screen x="0" y="36" width="1920" height="1044" />
+    </state>
+    <state x="619" y="256" key="run.anything.popup/0.36.1920.1044@0.36.1920.1044" timestamp="1584914348624" />
+    <state x="618" y="265" width="672" height="678" key="search.everywhere.popup" timestamp="1584913876845">
+      <screen x="0" y="36" width="1920" height="1044" />
+    </state>
+    <state x="618" y="265" width="672" height="678" key="search.everywhere.popup/0.36.1920.1044@0.36.1920.1044" timestamp="1584913876845" />
   </component>
 </project>
