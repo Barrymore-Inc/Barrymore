@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class TestDB {
+public class DatabaseTest {
     private Connection connection;
 
     private void connect() throws SQLException {
