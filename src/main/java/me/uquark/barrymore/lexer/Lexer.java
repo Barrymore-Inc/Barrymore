@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Lexer {
     private static ArrayList<Alias> aliases = new ArrayList<Alias>();
@@ -53,6 +54,14 @@ public class Lexer {
             return null;
     }
 
+    private static List<Alias> findAliases(String word, double threshold) {
+        List<Alias> found = new ArrayList<>();
+        for (Alias alias : aliases)
+            if (alias.check(word) >= threshold)
+                found.add(alias);
+        return found;
+    }
+
     public static ArrayList<Alias> tokenize(String sentence) {
         sentence = sentence.toLowerCase();
         sentence = sentence.replaceAll("[.,!?;:]", "");
@@ -60,11 +69,8 @@ public class Lexer {
 
         ArrayList<Alias> result = new ArrayList<Alias>();
 
-        for (String word : words) {
-            Alias alias = findAlias(word, 0.7);
-            if (alias != null)
-                result.add(alias);
-        }
+        for (String word : words)
+            result.addAll(findAliases(word, 0.7));
 
         return result;
     }
