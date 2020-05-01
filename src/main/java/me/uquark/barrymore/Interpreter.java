@@ -44,14 +44,13 @@ public class Interpreter {
 
     public InterpretationResult interprete(String command) {
         try {
-            Connection connection = DatabaseProvider.connect();
             String ids = String.join(",", getIds(Lexer.tokenize(command)));
 
             if (ids.isEmpty())
                 return InterpretationResult.NothingSpecified;
 
             String query = String.format("select ID from V_Location where ID in (%s)", ids);
-            PreparedStatement statement = connection.prepareStatement(query);
+            PreparedStatement statement = DatabaseProvider.CONNECTION.prepareStatement(query);
             ResultSet resultSet = statement.executeQuery();
             if (!resultSet.next())
                 return InterpretationResult.NoLocationSpecified;
@@ -60,7 +59,7 @@ public class Interpreter {
             statement.close();
 
             query = String.format("select ID, kClass from V_Object where kClass in (%s) and kLocation = ?", ids);
-            statement = connection.prepareStatement(query);
+            statement = DatabaseProvider.CONNECTION.prepareStatement(query);
             statement.setInt(1, kLocation);
             resultSet = statement.executeQuery();
             List<Integer> kObjects = new ArrayList<>();
@@ -78,7 +77,7 @@ public class Interpreter {
             statement.close();
 
             query = String.format("select ID, kClass from V_Object where ID in (%s) and kLocation = ?", ids);
-            statement = connection.prepareStatement(query);
+            statement = DatabaseProvider.CONNECTION.prepareStatement(query);
             statement.setInt(1, kLocation);
             resultSet = statement.executeQuery();
             while (resultSet.next()) {
@@ -98,7 +97,7 @@ public class Interpreter {
 
             String kClassesStr = String.join(",", kClasses);
             query = String.format("select ID from V_Action where ID in (%s) and kClass in (%s)", ids, kClassesStr);
-            statement = connection.prepareStatement(query);
+            statement = DatabaseProvider.CONNECTION.prepareStatement(query);
             resultSet = statement.executeQuery();
             if (!resultSet.next())
                 return InterpretationResult.NoActionSpecified;
@@ -113,6 +112,7 @@ public class Interpreter {
 
             for (Object object : objects)
                 System.out.printf("Execute %s on object %s\n", action.pName, object.pName);
+
         } catch (SQLException e) {
             e.printStackTrace();
             return InterpretationResult.SQLException;
@@ -121,56 +121,5 @@ public class Interpreter {
             return InterpretationResult.InvalidParameterException;
         }
         return InterpretationResult.OK;
-
-//        Location location = null;
-//        Class klass = null;
-//        Action action = null;
-//        List<Object> objects = new ArrayList<>();
-//
-//        for (Alias alias : aliases) {
-//            Entity current = null;
-//            try {
-//                current = Entity.loadEntity(alias.kEntity);
-//            } catch (SQLException e) {
-//                e.printStackTrace();
-//                return InterpretationResult.SQLException;
-//            } catch (InvalidParameterException e) {
-//                e.printStackTrace();
-//                return InterpretationResult.InvalidParameterException;
-//            }
-//            if (current == null)
-//                continue;
-//            switch (current.type) {
-//                case Location:
-//                    location = (Location) current;
-//                    break;
-//                case Class:
-//                    klass = (Class) current;
-//                    break;
-//                case Action:
-//                    action = (Action) current;
-//                    break;
-//                case Object:
-//                    objects.add((Object) current);
-//                    break;
-//            }
-//        }
-//
-//        if (action == null)
-//            return InterpretationResult.NoActionSpecified;
-//
-//        try {
-//            if (klass != null && location != null)
-//                objects.addAll(Object.loadByClassAndLocation(location.ID, klass.ID));
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//
-//        if (location != null)
-//            System.out.printf("%s objects [%s] at location %s\n", action.pName, getNames(objects, ", "), location.pName);
-//        else
-//            System.out.printf("%s objects [%s]\n", action.pName, getNames(objects, ", "));
-//
-//        return InterpretationResult.OK;
     }
 }

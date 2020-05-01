@@ -1,6 +1,5 @@
 package me.uquark.barrymore.architecture;
 
-import java.sql.Connection;
 import java.sql.SQLException;
 
 public class Class extends Entity {

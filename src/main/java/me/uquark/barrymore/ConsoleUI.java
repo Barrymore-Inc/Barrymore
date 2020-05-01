@@ -1,12 +1,16 @@
 package me.uquark.barrymore;
 
+import me.uquark.barrymore.db.DatabaseProvider;
 import me.uquark.barrymore.lexer.Lexer;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class ConsoleUI {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         try {
+            DatabaseProvider.CONNECTION = DatabaseProvider.connect();
+
             Lexer.loadAliases();
             Interpreter interpreter = new Interpreter();
             Scanner scanner = new Scanner(System.in);
@@ -18,6 +22,8 @@ public class ConsoleUI {
             }
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            DatabaseProvider.CONNECTION.close();
         }
     }
 }

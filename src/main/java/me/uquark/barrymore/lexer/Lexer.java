@@ -16,13 +16,11 @@ public class Lexer {
     public static void loadAliases() throws SQLException {
         aliases.clear();
 
-        Connection connection = null;
         ResultSet resultSet = null;
         Statement statement = null;
 
         try {
-            connection = DatabaseProvider.connect();
-            statement = connection.createStatement();
+            statement = DatabaseProvider.CONNECTION.createStatement();
             resultSet = statement.executeQuery("SELECT * FROM ALIAS");
             while (resultSet.next()) {
                 int ID = resultSet.getInt("ID");
@@ -33,7 +31,6 @@ public class Lexer {
         } finally {
             if (resultSet != null) resultSet.close();
             if (statement != null) statement.close();
-            if (connection != null) connection.close();
         }
     }
 

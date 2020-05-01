@@ -3,7 +3,6 @@ package me.uquark.barrymore.architecture;
 import me.uquark.barrymore.db.DatabaseProvider;
 
 import java.security.InvalidParameterException;
-import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -49,8 +48,7 @@ public abstract class Entity {
 
     public Entity(int ID) throws SQLException {
         // load from DB
-        Connection connection = DatabaseProvider.connect();
-        PreparedStatement statement = connection.prepareStatement("SELECT * FROM ENTITY WHERE ID = ?");
+        PreparedStatement statement = DatabaseProvider.CONNECTION.prepareStatement("SELECT * FROM ENTITY WHERE ID = ?");
         statement.setInt(1, ID);
         ResultSet resultSet = statement.executeQuery();
         resultSet.next();
@@ -60,7 +58,6 @@ public abstract class Entity {
         type = EntityType.getType(this.pType);
         resultSet.close();
         statement.close();
-        connection.close();
         if (this.type != getType())
             throw new InvalidParameterException(String.format("Types mismatch. %s expected, but %s found", this.type.toString(), getType().toString()));
     }
@@ -70,15 +67,13 @@ public abstract class Entity {
     public abstract void loadReferences() throws SQLException;
 
     public static Entity loadEntity(int ID) throws SQLException {
-        Connection connection = DatabaseProvider.connect();
-        PreparedStatement statement = connection.prepareStatement("SELECT PTYPE FROM ENTITY WHERE ID = ?");
+        PreparedStatement statement = DatabaseProvider.CONNECTION.prepareStatement("SELECT PTYPE FROM ENTITY WHERE ID = ?");
         statement.setInt(1, ID);
         ResultSet resultSet = statement.executeQuery();
         resultSet.next();
         char pType = resultSet.getString(1).charAt(0);
         resultSet.close();
         statement.close();
-        connection.close();
         switch (EntityType.getType(pType)) {
             case Class:
                 return new Class(ID);
