@@ -2,23 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="832e82a4-2a16-4760-81ef-8fff70666e31" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/uquark/barrymore/brain/Brain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/uquark/barrymore/lexer/AbstractToken.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/me/uquark/barrymore/lexer/Parameter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/BrainTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/uquark/barrymore/ConsoleUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/uquark/barrymore/Barrymore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/uquark/barrymore/Interpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/uquark/barrymore/brain/Interpreter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/uquark/barrymore/architecture/Action.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/uquark/barrymore/architecture/Action.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/uquark/barrymore/architecture/Class.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/uquark/barrymore/architecture/Class.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/uquark/barrymore/architecture/Entity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/uquark/barrymore/architecture/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/uquark/barrymore/architecture/Location.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/uquark/barrymore/architecture/Object.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/uquark/barrymore/architecture/Object.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/uquark/barrymore/lexer/Alias.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/uquark/barrymore/lexer/Alias.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/me/uquark/barrymore/lexer/Lexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/uquark/barrymore/lexer/Lexer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/LexerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LexerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/uquark/barrymore/Barrymore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/uquark/barrymore/Barrymore.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,6 +132,8 @@
       <workItem from="1588442685253" duration="120000" />
       <workItem from="1588444002210" duration="1848000" />
       <workItem from="1588450759375" duration="1729000" />
+      <workItem from="1588455343434" duration="37000" />
+      <workItem from="1588455394758" duration="12000" />
     </task>
     <servers />
   </component>
