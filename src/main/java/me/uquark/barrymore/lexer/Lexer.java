@@ -1,9 +1,7 @@
 package me.uquark.barrymore.lexer;
 
 import me.uquark.barrymore.db.DatabaseProvider;
-import me.uquark.barrymore.utils.LongestCommonSubstring;
 
-import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -34,40 +32,25 @@ public class Lexer {
         }
     }
 
-    private static Alias findAlias(String word, double threshold) {
-        double maxRating = -1;
-        int position = -1;
-        for (int i=0; i < aliases.size(); i++) {
-            double rating = aliases.get(i).check(word);
-            if (rating > maxRating) {
-                maxRating = rating;
-                position = i;
-            }
-        }
-
-        if (maxRating >= threshold)
-            return aliases.get(position);
-        else
-            return null;
-    }
-
-    private static List<Alias> findAliases(String word, double threshold) {
-        List<Alias> found = new ArrayList<>();
+    private static List<AbstractToken> findTokens(String word, double threshold) {
+        List<AbstractToken> found = new ArrayList<>();
         for (Alias alias : aliases)
             if (alias.check(word) >= threshold)
                 found.add(alias);
+        if (found.isEmpty())
+            found.add(new Parameter(word));
         return found;
     }
 
-    public static ArrayList<Alias> tokenize(String sentence) {
+    public static List<AbstractToken> tokenize(String sentence) {
         sentence = sentence.toLowerCase();
         sentence = sentence.replaceAll("[.,!?;:]", "");
         String[] words = sentence.split(" ");
 
-        ArrayList<Alias> result = new ArrayList<Alias>();
+        List<AbstractToken> result = new ArrayList<>();
 
         for (String word : words)
-            result.addAll(findAliases(word, 0.7));
+            result.addAll(findTokens(word, 0.7));
 
         return result;
     }

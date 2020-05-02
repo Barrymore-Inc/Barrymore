@@ -1,21 +1,26 @@
-package me.uquark.barrymore;
+package me.uquark.barrymore.brain;
 
-import me.uquark.barrymore.architecture.Class;
+import me.uquark.barrymore.api.ActionObject;
+import me.uquark.barrymore.api.ActionSubject;
+import me.uquark.barrymore.architecture.Action;
 import me.uquark.barrymore.architecture.Object;
-import me.uquark.barrymore.architecture.*;
 import me.uquark.barrymore.db.DatabaseProvider;
+import me.uquark.barrymore.lexer.AbstractToken;
 import me.uquark.barrymore.lexer.Alias;
 import me.uquark.barrymore.lexer.Lexer;
+import me.uquark.barrymore.lexer.Parameter;
 
 import java.security.InvalidParameterException;
-import java.sql.*;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Interpreter {
     public Interpreter() throws SQLException {}
 
-    public enum InterpretationResult {
+    public enum InterpretationStatus {
         OK,
         SQLException,
         InvalidParameterException,
@@ -25,14 +30,10 @@ public class Interpreter {
         NothingSpecified
     }
 
-    private String getNames(List<? extends Entity> entities, String separator) {
-        StringBuilder names = new StringBuilder();
-        for (int i=0; i < entities.size(); i++) {
-            names.append(entities.get(i).pName);
-            if (i < entities.size() - 1)
-                names.append(separator);
-        }
-        return names.toString();
+    public static class InterpretationResult {
+        public ActionObject object;
+        public ActionSubject[] subjects;
+        public String[] parameters;
     }
 
     private String[] getIds(List<Alias> aliases) {
@@ -42,18 +43,38 @@ public class Interpreter {
         return result;
     }
 
-    public InterpretationResult interprete(String command) {
+    private String[] getWords(List<? extends AbstractToken> tokens) {
+        String[] result = new String[tokens.size()];
+        for (int i=0; i < tokens.size(); i++)
+            result[i] = tokens.get(i).pWord;
+        return result;
+    }
+
+    private void separateTokens(List<AbstractToken> tokens, List<Alias> aliases, List<Parameter> parameters) {
+        for (AbstractToken token : tokens)
+            if (token instanceof Parameter)
+                parameters.add((Parameter) token);
+            else if (token instanceof Alias)
+                aliases.add((Alias) token);
+    }
+
+    public InterpretationStatus interprete(String command, InterpretationResult result) {
         try {
-            String ids = String.join(",", getIds(Lexer.tokenize(command)));
+            List<Alias> aliases = new ArrayList<>();
+            List<Parameter> parameters = new ArrayList<>();
+
+            separateTokens(Lexer.tokenize(command), aliases, parameters);
+
+            String ids = String.join(",", getIds(aliases));
 
             if (ids.isEmpty())
-                return InterpretationResult.NothingSpecified;
+                return InterpretationStatus.NothingSpecified;
 
             String query = String.format("select ID from V_Location where ID in (%s)", ids);
             PreparedStatement statement = DatabaseProvider.CONNECTION.prepareStatement(query);
             ResultSet resultSet = statement.executeQuery();
             if (!resultSet.next())
-                return InterpretationResult.NoLocationSpecified;
+                return InterpretationStatus.NoLocationSpecified;
             int kLocation = resultSet.getInt(1);
             resultSet.close();
             statement.close();
@@ -93,33 +114,33 @@ public class Interpreter {
             statement.close();
 
             if (kObjects.isEmpty())
-                return InterpretationResult.NoObjectsSpecified;
+                return InterpretationStatus.NoObjectsSpecified;
 
             String kClassesStr = String.join(",", kClasses);
             query = String.format("select ID from V_Action where ID in (%s) and kClass in (%s)", ids, kClassesStr);
             statement = DatabaseProvider.CONNECTION.prepareStatement(query);
             resultSet = statement.executeQuery();
             if (!resultSet.next())
-                return InterpretationResult.NoActionSpecified;
+                return InterpretationStatus.NoActionSpecified;
             int kAction = resultSet.getInt(1);
             resultSet.close();
             statement.close();
 
-            Action action = new Action(kAction);
-            List<Object> objects = new ArrayList<>();
-            for (int key : kObjects)
-                objects.add(new Object(key));
-
-            for (Object object : objects)
-                System.out.printf("Execute %s on object %s\n", action.pName, object.pName);
-
+            result.object = new ActionObject(new Action(kAction).pName);
+            result.subjects = new ActionSubject[kObjects.size()];
+            for (int i=0; i < kObjects.size(); i++) {
+                Object object = new Object(kObjects.get(i));
+                object.loadReferences();
+                result.subjects[i] = new ActionSubject(object.klass.pName, object.address);
+            }
+            result.parameters = getWords(parameters);
         } catch (SQLException e) {
             e.printStackTrace();
-            return InterpretationResult.SQLException;
+            return InterpretationStatus.SQLException;
         } catch (InvalidParameterException e) {
             e.printStackTrace();
-            return InterpretationResult.InvalidParameterException;
+            return InterpretationStatus.InvalidParameterException;
         }
-        return InterpretationResult.OK;
+        return InterpretationStatus.OK;
     }
 }

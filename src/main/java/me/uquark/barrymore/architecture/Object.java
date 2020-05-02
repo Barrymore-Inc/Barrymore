@@ -6,31 +6,31 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Object extends Entity {
+public class Object {
+    public final int ID;
+    public final String pName;
     public final int kLocation;
     public final int kClass;
+    public final String address;
 
     public Location location;
     public Class klass;
 
     public Object(int ID) throws SQLException {
-        super(ID);
-        PreparedStatement statement = DatabaseProvider.CONNECTION.prepareStatement("SELECT * FROM OBJECT WHERE ID = ?");
+        this.ID = ID;
+        PreparedStatement statement = DatabaseProvider.CONNECTION.prepareStatement("SELECT * FROM V_OBJECT WHERE ID = ?");
         statement.setInt(1, ID);
         ResultSet resultSet = statement.executeQuery();
         resultSet.next();
-        kClass = resultSet.getInt(2);
+        pName = resultSet.getString(2);
         kLocation = resultSet.getInt(3);
+        kClass = resultSet.getInt(4);
+        address = resultSet.getString(5);
+
         resultSet.close();
         statement.close();
     }
 
-    @Override
-    protected EntityType getType() {
-        return EntityType.Object;
-    }
-
-    @Override
     public void loadReferences() throws SQLException {
         location = new Location(kLocation);
         klass = new Class(kClass);
