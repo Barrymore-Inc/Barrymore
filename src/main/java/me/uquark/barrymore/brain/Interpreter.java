@@ -1,7 +1,7 @@
 package me.uquark.barrymore.brain;
 
-import me.uquark.barrymore.api.ActionObject;
-import me.uquark.barrymore.api.ActionSubject;
+import me.uquark.barrymore.api.Order;
+import me.uquark.barrymore.api.Subject;
 import me.uquark.barrymore.architecture.Action;
 import me.uquark.barrymore.architecture.Object;
 import me.uquark.barrymore.db.DatabaseProvider;
@@ -30,12 +30,6 @@ public class Interpreter {
         NothingSpecified
     }
 
-    public static class InterpretationResult {
-        public ActionObject object;
-        public ActionSubject[] subjects;
-        public String[] parameters;
-    }
-
     private String[] getIds(List<Alias> aliases) {
         String[] result = new String[aliases.size()];
         for (int i=0; i < aliases.size(); i++)
@@ -58,7 +52,7 @@ public class Interpreter {
                 aliases.add((Alias) token);
     }
 
-    public InterpretationStatus interprete(String command, InterpretationResult result) {
+    public InterpretationStatus interprete(String command, Order result) {
         try {
             List<Alias> aliases = new ArrayList<>();
             List<Parameter> parameters = new ArrayList<>();
@@ -126,12 +120,12 @@ public class Interpreter {
             resultSet.close();
             statement.close();
 
-            result.object = new ActionObject(new Action(kAction).pName);
-            result.subjects = new ActionSubject[kObjects.size()];
+            result.action = new me.uquark.barrymore.api.Action(new Action(kAction).pName);
+            result.subjects = new Subject[kObjects.size()];
             for (int i=0; i < kObjects.size(); i++) {
                 Object object = new Object(kObjects.get(i));
                 object.loadReferences();
-                result.subjects[i] = new ActionSubject(object.klass.pName, object.address);
+                result.subjects[i] = new Subject(object.klass.pName, object.address);
             }
             result.parameters = getWords(parameters);
         } catch (SQLException e) {

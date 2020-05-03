@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="832e82a4-2a16-4760-81ef-8fff70666e31" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/me/uquark/barrymore/utils/Logger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/uquark/barrymore/Barrymore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/uquark/barrymore/Barrymore.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/uquark/barrymore/brain/Brain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/uquark/barrymore/brain/Brain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/uquark/barrymore/brain/Interpreter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/uquark/barrymore/brain/Interpreter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/uquark/barrymore/lexer/Lexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/uquark/barrymore/lexer/Lexer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/BrainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BrainTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,6 +49,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -142,6 +146,14 @@
       <workItem from="1588456999289" duration="1893000" />
       <workItem from="1588459088189" duration="80000" />
       <workItem from="1588459750061" duration="165000" />
+      <workItem from="1588515325688" duration="94000" />
+      <workItem from="1588517918642" duration="919000" />
+      <workItem from="1588518857977" duration="103000" />
+      <workItem from="1588519000113" duration="56000" />
+      <workItem from="1588519080203" duration="142000" />
+      <workItem from="1588519344448" duration="39000" />
+      <workItem from="1588519411371" duration="1667000" />
+      <workItem from="1588523785323" duration="600000" />
     </task>
     <servers />
   </component>
@@ -169,10 +181,10 @@
     </state>
     <state x="824" y="85" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.32.1920.1048@0.32.1920.1048" timestamp="1588334711054" />
     <state x="824" y="89" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.36.1920.1044@0.36.1920.1044" timestamp="1585587523365" />
-    <state x="819" y="343" key="#com.intellij.ide.util.MemberChooser" timestamp="1588451822897">
+    <state x="819" y="343" key="#com.intellij.ide.util.MemberChooser" timestamp="1588519500438">
       <screen x="0" y="32" width="1920" height="1048" />
     </state>
-    <state x="819" y="343" key="#com.intellij.ide.util.MemberChooser/0.32.1920.1048@0.32.1920.1048" timestamp="1588451822897" />
+    <state x="819" y="343" key="#com.intellij.ide.util.MemberChooser/0.32.1920.1048@0.32.1920.1048" timestamp="1588519500438" />
     <state x="763" y="367" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588449650175">
       <screen x="0" y="32" width="1920" height="1048" />
     </state>
@@ -186,25 +198,25 @@
     </state>
     <state x="743" y="312" key="FileChooserDialogImpl/0.32.1920.1048@0.32.1920.1048" timestamp="1588334646620" />
     <state x="743" y="315" key="FileChooserDialogImpl/0.36.1920.1044@0.36.1920.1044" timestamp="1585587461975" />
-    <state width="1884" height="292" key="GridCell.Tab.0.bottom" timestamp="1588459914291">
+    <state width="1884" height="292" key="GridCell.Tab.0.bottom" timestamp="1588524385112">
       <screen x="0" y="32" width="1920" height="1048" />
     </state>
-    <state width="1884" height="292" key="GridCell.Tab.0.bottom/0.32.1920.1048@0.32.1920.1048" timestamp="1588459914291" />
+    <state width="1884" height="292" key="GridCell.Tab.0.bottom/0.32.1920.1048@0.32.1920.1048" timestamp="1588524385112" />
     <state width="1291" height="276" key="GridCell.Tab.0.bottom/0.36.1920.1044@0.36.1920.1044" timestamp="1585587880687" />
-    <state width="1884" height="292" key="GridCell.Tab.0.center" timestamp="1588459914291">
+    <state width="1884" height="292" key="GridCell.Tab.0.center" timestamp="1588524385112">
       <screen x="0" y="32" width="1920" height="1048" />
     </state>
-    <state width="1884" height="292" key="GridCell.Tab.0.center/0.32.1920.1048@0.32.1920.1048" timestamp="1588459914291" />
+    <state width="1884" height="292" key="GridCell.Tab.0.center/0.32.1920.1048@0.32.1920.1048" timestamp="1588524385112" />
     <state width="1291" height="276" key="GridCell.Tab.0.center/0.36.1920.1044@0.36.1920.1044" timestamp="1585587880687" />
-    <state width="1884" height="292" key="GridCell.Tab.0.left" timestamp="1588459914291">
+    <state width="1884" height="292" key="GridCell.Tab.0.left" timestamp="1588524385112">
       <screen x="0" y="32" width="1920" height="1048" />
     </state>
-    <state width="1884" height="292" key="GridCell.Tab.0.left/0.32.1920.1048@0.32.1920.1048" timestamp="1588459914291" />
+    <state width="1884" height="292" key="GridCell.Tab.0.left/0.32.1920.1048@0.32.1920.1048" timestamp="1588524385112" />
     <state width="1291" height="276" key="GridCell.Tab.0.left/0.36.1920.1044@0.36.1920.1044" timestamp="1585587880687" />
-    <state width="1884" height="292" key="GridCell.Tab.0.right" timestamp="1588459914291">
+    <state width="1884" height="292" key="GridCell.Tab.0.right" timestamp="1588524385112">
       <screen x="0" y="32" width="1920" height="1048" />
     </state>
-    <state width="1884" height="292" key="GridCell.Tab.0.right/0.32.1920.1048@0.32.1920.1048" timestamp="1588459914291" />
+    <state width="1884" height="292" key="GridCell.Tab.0.right/0.32.1920.1048@0.32.1920.1048" timestamp="1588524385112" />
     <state width="1291" height="276" key="GridCell.Tab.0.right/0.36.1920.1044@0.36.1920.1044" timestamp="1585587880687" />
     <state width="1884" height="358" key="GridCell.Tab.1.bottom" timestamp="1588452408855">
       <screen x="0" y="32" width="1920" height="1048" />
@@ -252,10 +264,10 @@
     </state>
     <state x="330" y="259" key="new project wizard/0.32.1920.1048@0.32.1920.1048" timestamp="1588442803718" />
     <state x="330" y="262" width="1239" height="590" key="new project wizard/0.36.1920.1044@0.36.1920.1044" timestamp="1585315833164" />
-    <state x="619" y="253" key="run.anything.popup" timestamp="1588456671769">
+    <state x="619" y="253" key="run.anything.popup" timestamp="1588520799270">
       <screen x="0" y="32" width="1920" height="1048" />
     </state>
-    <state x="619" y="253" key="run.anything.popup/0.32.1920.1048@0.32.1920.1048" timestamp="1588456671769" />
+    <state x="619" y="253" key="run.anything.popup/0.32.1920.1048@0.32.1920.1048" timestamp="1588520799270" />
     <state x="619" y="256" key="run.anything.popup/0.36.1920.1044@0.36.1920.1044" timestamp="1584914348624" />
     <state x="618" y="265" width="672" height="678" key="search.everywhere.popup" timestamp="1585586671040">
       <screen x="0" y="36" width="1920" height="1044" />

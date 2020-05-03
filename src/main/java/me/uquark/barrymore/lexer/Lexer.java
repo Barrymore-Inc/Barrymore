@@ -11,7 +11,7 @@ import java.util.List;
 public class Lexer {
     private static ArrayList<Alias> aliases = new ArrayList<Alias>();
 
-    public static void loadAliases() throws SQLException {
+    public static int loadAliases() throws SQLException {
         aliases.clear();
 
         ResultSet resultSet = null;
@@ -26,6 +26,8 @@ public class Lexer {
                 String pWord = resultSet.getString("pWord");
                 aliases.add(new Alias(ID, kEntity, pWord));
             }
+
+            return aliases.size();
         } finally {
             if (resultSet != null) resultSet.close();
             if (statement != null) statement.close();
