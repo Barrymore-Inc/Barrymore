@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="832e82a4-2a16-4760-81ef-8fff70666e31" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/me/uquark/barrymore/Barrymore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/uquark/barrymore/Barrymore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/me/uquark/barrymore/brain/Brain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/me/uquark/barrymore/brain/Brain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BrainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BrainTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +50,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager" selected="JUnit.BrainTest.testBrain">
+  <component name="RunManager" selected="Application.Barrymore">
     <configuration name="Barrymore" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="me.uquark.barrymore.Barrymore" />
       <module name="Barrymore" />
@@ -102,9 +105,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Barrymore" />
         <item itemvalue="JUnit.BrainTest.testBrain" />
         <item itemvalue="JUnit.LexerTest.testTokenization" />
-        <item itemvalue="Application.Barrymore" />
         <item itemvalue="JUnit.DatabaseTest" />
         <item itemvalue="JUnit.DatabaseTest.testQuery" />
       </list>
@@ -133,7 +136,12 @@
       <workItem from="1588444002210" duration="1848000" />
       <workItem from="1588450759375" duration="1729000" />
       <workItem from="1588455343434" duration="37000" />
-      <workItem from="1588455394758" duration="12000" />
+      <workItem from="1588455394758" duration="34000" />
+      <workItem from="1588456568076" duration="257000" />
+      <workItem from="1588456843698" duration="19000" />
+      <workItem from="1588456999289" duration="1893000" />
+      <workItem from="1588459088189" duration="80000" />
+      <workItem from="1588459750061" duration="165000" />
     </task>
     <servers />
   </component>
@@ -178,25 +186,25 @@
     </state>
     <state x="743" y="312" key="FileChooserDialogImpl/0.32.1920.1048@0.32.1920.1048" timestamp="1588334646620" />
     <state x="743" y="315" key="FileChooserDialogImpl/0.36.1920.1044@0.36.1920.1044" timestamp="1585587461975" />
-    <state width="1884" height="358" key="GridCell.Tab.0.bottom" timestamp="1588452407396">
+    <state width="1884" height="292" key="GridCell.Tab.0.bottom" timestamp="1588459914291">
       <screen x="0" y="32" width="1920" height="1048" />
     </state>
-    <state width="1884" height="358" key="GridCell.Tab.0.bottom/0.32.1920.1048@0.32.1920.1048" timestamp="1588452407396" />
+    <state width="1884" height="292" key="GridCell.Tab.0.bottom/0.32.1920.1048@0.32.1920.1048" timestamp="1588459914291" />
     <state width="1291" height="276" key="GridCell.Tab.0.bottom/0.36.1920.1044@0.36.1920.1044" timestamp="1585587880687" />
-    <state width="1884" height="358" key="GridCell.Tab.0.center" timestamp="1588452407396">
+    <state width="1884" height="292" key="GridCell.Tab.0.center" timestamp="1588459914291">
       <screen x="0" y="32" width="1920" height="1048" />
     </state>
-    <state width="1884" height="358" key="GridCell.Tab.0.center/0.32.1920.1048@0.32.1920.1048" timestamp="1588452407396" />
+    <state width="1884" height="292" key="GridCell.Tab.0.center/0.32.1920.1048@0.32.1920.1048" timestamp="1588459914291" />
     <state width="1291" height="276" key="GridCell.Tab.0.center/0.36.1920.1044@0.36.1920.1044" timestamp="1585587880687" />
-    <state width="1884" height="358" key="GridCell.Tab.0.left" timestamp="1588452407395">
+    <state width="1884" height="292" key="GridCell.Tab.0.left" timestamp="1588459914291">
       <screen x="0" y="32" width="1920" height="1048" />
     </state>
-    <state width="1884" height="358" key="GridCell.Tab.0.left/0.32.1920.1048@0.32.1920.1048" timestamp="1588452407395" />
+    <state width="1884" height="292" key="GridCell.Tab.0.left/0.32.1920.1048@0.32.1920.1048" timestamp="1588459914291" />
     <state width="1291" height="276" key="GridCell.Tab.0.left/0.36.1920.1044@0.36.1920.1044" timestamp="1585587880687" />
-    <state width="1884" height="358" key="GridCell.Tab.0.right" timestamp="1588452407396">
+    <state width="1884" height="292" key="GridCell.Tab.0.right" timestamp="1588459914291">
       <screen x="0" y="32" width="1920" height="1048" />
     </state>
-    <state width="1884" height="358" key="GridCell.Tab.0.right/0.32.1920.1048@0.32.1920.1048" timestamp="1588452407396" />
+    <state width="1884" height="292" key="GridCell.Tab.0.right/0.32.1920.1048@0.32.1920.1048" timestamp="1588459914291" />
     <state width="1291" height="276" key="GridCell.Tab.0.right/0.36.1920.1044@0.36.1920.1044" timestamp="1585587880687" />
     <state width="1884" height="358" key="GridCell.Tab.1.bottom" timestamp="1588452408855">
       <screen x="0" y="32" width="1920" height="1048" />
@@ -244,10 +252,10 @@
     </state>
     <state x="330" y="259" key="new project wizard/0.32.1920.1048@0.32.1920.1048" timestamp="1588442803718" />
     <state x="330" y="262" width="1239" height="590" key="new project wizard/0.36.1920.1044@0.36.1920.1044" timestamp="1585315833164" />
-    <state x="619" y="253" key="run.anything.popup" timestamp="1588450217551">
+    <state x="619" y="253" key="run.anything.popup" timestamp="1588456671769">
       <screen x="0" y="32" width="1920" height="1048" />
     </state>
-    <state x="619" y="253" key="run.anything.popup/0.32.1920.1048@0.32.1920.1048" timestamp="1588450217551" />
+    <state x="619" y="253" key="run.anything.popup/0.32.1920.1048@0.32.1920.1048" timestamp="1588456671769" />
     <state x="619" y="256" key="run.anything.popup/0.36.1920.1044@0.36.1920.1044" timestamp="1584914348624" />
     <state x="618" y="265" width="672" height="678" key="search.everywhere.popup" timestamp="1585586671040">
       <screen x="0" y="36" width="1920" height="1044" />

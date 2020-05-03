@@ -7,6 +7,7 @@ import me.uquark.barrymore.lexer.Lexer;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.rmi.RemoteException;
 import java.sql.SQLException;
 
 public class BrainTest implements BarrymoreBinding {
@@ -15,7 +16,7 @@ public class BrainTest implements BarrymoreBinding {
     private String[] parameters;
     private Brain brain;
 
-    private void init() throws SQLException {
+    private void init() throws SQLException, RemoteException {
         DatabaseProvider.CONNECTION = DatabaseProvider.connect();
         Lexer.loadAliases();
         brain = new Brain();
@@ -23,7 +24,7 @@ public class BrainTest implements BarrymoreBinding {
     }
 
     @Test
-    public void testBrain() throws SQLException {
+    public void testBrain() throws SQLException, RemoteException {
         init();
         brain.processUserMessage("Выключи свет и телевизор в спальне");
         Assert.assertEquals(actionObject.name, "turnOff");
