@@ -52,7 +52,7 @@ public class Interpreter {
                 aliases.add((Alias) token);
     }
 
-    public InterpretationStatus interprete(String command, Order result) {
+    public InterpretationStatus interprete(String command, Order result, Context context) {
         try {
             List<Alias> aliases = new ArrayList<>();
             List<Parameter> parameters = new ArrayList<>();
@@ -67,13 +67,18 @@ public class Interpreter {
             String query = String.format("select ID from V_Location where ID in (%s)", ids);
             PreparedStatement statement = DatabaseProvider.CONNECTION.prepareStatement(query);
             ResultSet resultSet = statement.executeQuery();
-            if (!resultSet.next())
+            int kLocation = 0;
+            if (resultSet.next()) {
+                kLocation = resultSet.getInt(1);
+            } else if (context.location != null) {
+                kLocation = context.location.ID;
+            } else if (!context.checkSingleObject) {
                 return InterpretationStatus.NoLocationSpecified;
-            int kLocation = resultSet.getInt(1);
+            }
             resultSet.close();
             statement.close();
 
-            query = String.format("select ID, kClass from V_Object where kClass in (%s) and kLocation = ?", ids);
+            query = String.format("select ID, kClass from V_Object where ((kClass in (%s)) or (ID in (%s))) and kLocation = ?", ids, ids);
             statement = DatabaseProvider.CONNECTION.prepareStatement(query);
             statement.setInt(1, kLocation);
             resultSet = statement.executeQuery();
@@ -91,24 +96,43 @@ public class Interpreter {
             resultSet.close();
             statement.close();
 
-            query = String.format("select ID, kClass from V_Object where ID in (%s) and kLocation = ?", ids);
-            statement = DatabaseProvider.CONNECTION.prepareStatement(query);
-            statement.setInt(1, kLocation);
-            resultSet = statement.executeQuery();
-            while (resultSet.next()) {
-                int id = resultSet.getInt(1);
-                kObjects.add(id);
-                String kClass = String.valueOf(resultSet.getInt(2));
-                if (!kClass.equals("0"))
-                    kClasses.add(kClass);
-                else
-                    kClasses.add(String.valueOf(id));
+//            query = String.format("select ID, kClass from V_Object where ID in (%s) and kLocation = ?", ids);
+//            statement = DatabaseProvider.CONNECTION.prepareStatement(query);
+//            statement.setInt(1, kLocation);
+//            resultSet = statement.executeQuery();
+//            while (resultSet.next()) {
+//                int id = resultSet.getInt(1);
+//                kObjects.add(id);
+//                String kClass = String.valueOf(resultSet.getInt(2));
+//                if (!kClass.equals("0"))
+//                    kClasses.add(kClass);
+//                else
+//                    kClasses.add(String.valueOf(id));
+//            }
+//            resultSet.close();
+//            statement.close();
+
+            if (kObjects.isEmpty() && context.checkSingleObject) {
+                query = String.format("select ID, kClass from V_Object where (kClass in (%s)) or (ID in (%s))", ids, ids);
+                statement = DatabaseProvider.CONNECTION.prepareStatement(query, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+                resultSet = statement.executeQuery();
+                if (!resultSet.last())
+                    return InterpretationStatus.NoObjectsSpecified;
+                if (resultSet.getRow() > 1)
+                    return InterpretationStatus.NoObjectsSpecified;
+                else {
+                    resultSet.first();
+                    int id = resultSet.getInt(1);
+                    kObjects.add(id);
+                    String kClass = String.valueOf(resultSet.getInt(2));
+                    if (!kClass.equals("0"))
+                        kClasses.add(kClass);
+                    else
+                        kClasses.add(String.valueOf(id));
+                }
             }
             resultSet.close();
             statement.close();
-
-            if (kObjects.isEmpty())
-                return InterpretationStatus.NoObjectsSpecified;
 
             String kClassesStr = String.join(",", kClasses);
             query = String.format("select ID from V_Action where ID in (%s) and kClass in (%s)", ids, kClassesStr);

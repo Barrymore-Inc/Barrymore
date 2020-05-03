@@ -6,7 +6,7 @@
 
     <groupId>me.uquark</groupId>
     <artifactId>barrymore</artifactId>
-    <version>0.1.1</version>
+    <version>0.2.1</version>
 
     <build>
         <plugins>
@@ -55,9 +55,9 @@
         <dependency>
             <groupId>me.uquark</groupId>
             <artifactId>barrymore-api</artifactId>
-            <version>0.1.1</version>
+            <version>0.2.1</version>
             <scope>system</scope>
-            <systemPath>/home/uquark/Projects/Barrymore-API/target/barrymore-api-0.1.1.jar</systemPath>
+            <systemPath>/home/uquark/Projects/Barrymore-API/target/barrymore-api-0.2.1.jar</systemPath>
         </dependency>
     </dependencies>
 
