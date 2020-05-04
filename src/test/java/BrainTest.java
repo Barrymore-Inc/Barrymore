@@ -25,9 +25,8 @@ public class BrainTest implements BarrymoreBinding {
 
     @Test
     public void testBrainExplicit() throws RemoteException {
-        order = null;
         coords = new Coords(0,0,0);
-        brain.processUserMessage(this, 0, "Выключи testdev в testroom");
+        order = brain.processUserMessage(coords, "Выключи testdev в testroom");
         Assert.assertEquals(order.action.name, "turnOff");
         Assert.assertEquals(order.subjects[0].klass, "Light");
         Assert.assertEquals(order.subjects[0].address, "0:0:0");
@@ -35,9 +34,8 @@ public class BrainTest implements BarrymoreBinding {
 
     @Test
     public void testBrainImplicitLocation() throws RemoteException {
-        order = null;
         coords = new Coords(-65535, -65535, -65535);
-        brain.processUserMessage(this, 0, "Выключи testdev");
+        order = brain.processUserMessage(coords, "Выключи testdev");
         Assert.assertEquals(order.action.name, "turnOff");
         Assert.assertEquals(order.subjects[0].klass, "Light");
         Assert.assertEquals(order.subjects[0].address, "0:0:0");
@@ -45,26 +43,10 @@ public class BrainTest implements BarrymoreBinding {
 
     @Test
     public void testBrainImplicit() throws RemoteException {
-        order = null;
         coords = new Coords(0, 0, 0);
-        brain.processUserMessage(this, 0, "Выключи testdev");
+        order = brain.processUserMessage(coords, "Выключи testdev");
         Assert.assertEquals(order.action.name, "turnOff");
         Assert.assertEquals(order.subjects[0].klass, "Light");
         Assert.assertEquals(order.subjects[0].address, "0:0:0");
-    }
-
-    @Override
-    public void processOrder(Order order) throws RemoteException {
-        this.order = order;
-    }
-
-    @Override
-    public String getName() throws RemoteException {
-        return "TestBinding";
-    }
-
-    @Override
-    public Coords getUserLocation(int i) throws RemoteException {
-        return coords;
     }
 }

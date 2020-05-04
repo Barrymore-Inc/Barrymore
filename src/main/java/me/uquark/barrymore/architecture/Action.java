@@ -1,6 +1,5 @@
 package me.uquark.barrymore.architecture;
 
-import com.sun.nio.file.SensitivityWatchEventModifier;
 import me.uquark.barrymore.db.DatabaseProvider;
 
 import java.sql.PreparedStatement;
