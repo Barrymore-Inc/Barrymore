@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Lexer {
-    private static ArrayList<Alias> aliases = new ArrayList<Alias>();
+    private static final ArrayList<Alias> aliases = new ArrayList<Alias>();
 
     public static int loadAliases() throws SQLException {
         aliases.clear();
@@ -55,5 +55,12 @@ public class Lexer {
             result.addAll(findTokens(word, 0.7));
 
         return result;
+    }
+
+    public static List<String> getAliasesAsStrings() {
+        List<String> strings = new ArrayList<>();
+        for (Alias alias : aliases)
+            strings.add(alias.pWord);
+        return strings;
     }
 }

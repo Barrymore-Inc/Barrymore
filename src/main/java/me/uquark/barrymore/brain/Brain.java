@@ -4,9 +4,11 @@ import me.uquark.barrymore.api.BarrymoreBrain;
 import me.uquark.barrymore.api.Coords;
 import me.uquark.barrymore.api.Order;
 import me.uquark.barrymore.architecture.Location;
+import me.uquark.barrymore.lexer.Lexer;
 import me.uquark.barrymore.utils.Logger;
 
 import java.sql.SQLException;
+import java.util.List;
 
 public class Brain implements BarrymoreBrain {
     private final Interpreter interpreter = new Interpreter();
@@ -32,5 +34,10 @@ public class Brain implements BarrymoreBrain {
         Interpreter.InterpretationStatus status = interpreter.interprete(message, result, context);
         result.response = status.toString();
         return result;
+    }
+
+    @Override
+    public List<String> getPhrases() {
+        return Lexer.getAliasesAsStrings();
     }
 }
