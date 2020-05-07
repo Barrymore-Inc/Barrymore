@@ -6,7 +6,7 @@
 
     <groupId>me.uquark</groupId>
     <artifactId>barrymore</artifactId>
-    <version>0.2.1</version>
+    <version>0.4.1</version>
 
     <build>
         <plugins>
@@ -40,6 +40,13 @@
         </plugins>
     </build>
 
+    <repositories>
+        <repository>
+            <id>barrymore-api-github</id>
+            <url>https://raw.github.com/Barrymore-Inc/Barrymore-API/repository/</url>
+        </repository>
+    </repositories>
+
     <dependencies>
         <dependency>
             <groupId>org.firebirdsql.jdbc</groupId>
@@ -56,8 +63,6 @@
             <groupId>me.uquark</groupId>
             <artifactId>barrymore-api</artifactId>
             <version>0.4.1</version>
-            <scope>system</scope>
-            <systemPath>/home/uquark/Projects/Barrymore-API/target/barrymore-api-0.4.1.jar</systemPath>
         </dependency>
     </dependencies>
 
